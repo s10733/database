@@ -2,6 +2,8 @@ package komis.db;
 
 import java.util.List;
 
+import komis.Transaction;
+
 public interface Dao<E extends EntityBase> {
 
 	public void save(E object);
@@ -9,4 +11,5 @@ public interface Dao<E extends EntityBase> {
 	public void update(E object);
 	public List<E> getAll();
 	public E get(int id);
+
 }

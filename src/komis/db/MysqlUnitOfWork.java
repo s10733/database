@@ -91,6 +91,7 @@ public class MysqlUnitOfWork implements UnitOfWork {
 				
 				connection.close();
 				connection = null;
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

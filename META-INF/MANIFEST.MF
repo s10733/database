@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Baza_danych
+Bundle-SymbolicName: Baza_danych
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: Baza_danych.jar,
+ Łukasz/Desktop/mysql-connector-java-5.1.27/mysql-connector-java-5.1.27/mysql-connector-java-5.1.27-bin.jar
+Export-Package: komis,
+ komis.db,
+ komis.db.dao
