@@ -5,7 +5,7 @@ import komis.db.EntityBase;
 public class Car extends EntityBase{
 
 	
-	//relacja Auto- Oferta;
+
 	private Offer offers;
 	private String brand;
 	private String model;
@@ -15,7 +15,7 @@ public class Car extends EntityBase{
 	private String mileage;
 	private String car_number;
 	
-	
+	//relacja Auto- Oferta;
 	public Offer getOffers() {
 		return offers;
 	}

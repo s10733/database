@@ -15,8 +15,6 @@ public class Client extends EntityBase {
 	private String street;
 	private String pesel;
 	 
-	private Saw saw;
-	
 
 	//relacja klient- transakcja
 	private List<Transaction> transactions;
@@ -28,12 +26,7 @@ public class Client extends EntityBase {
 		this.transactions = transactions;
 	}
 	
-	public Saw getSaw() {
-		return saw;
-	}
-	public void setSaw(Saw saw) {
-		this.saw = saw;
-	}
+	
 	
 	public String getName() {
 		return name;

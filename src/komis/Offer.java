@@ -6,8 +6,6 @@ import komis.db.EntityBase;
 
 public class Offer extends EntityBase {
 
-	// relacja Oferta-Obejrzane
-	private Saw saw;
 
 	// relacja Oferta - Transakcja
 	private Transaction transactions;
@@ -27,13 +25,6 @@ public class Offer extends EntityBase {
 	}
 
 		
-		public Saw getSaw() {
-		return saw;
-	}
-
-	public void setSaw(Saw saw) {
-		this.saw = saw;
-	}
 
 	public double getPrice() {
 		return price;
