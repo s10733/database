@@ -1,13 +1,3 @@
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
-
-
-
-
-
-
-import com.mysql.jdbc.Connection;
 
 import komis.Client;
 import komis.Transaction;
@@ -33,12 +23,11 @@ public class Main {
 		
 		c.setName("Pawe³");
 		c.setSurname("Kowalski");
-		c.setPesel("82120314598");
+		c.setPesel("82120314592");
 		c.setCity("Warszawa");
 		c.setStreet("Kochanowskiego");
 		c.setNumber("500100200");
-		
-		
+	
 		dao.save(c);
 		uow.commit();
 		uow.close();

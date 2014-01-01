@@ -2,7 +2,6 @@ package komis.db;
 
 import java.util.List;
 
-import komis.Transaction;
 
 public interface Dao<E extends EntityBase> {
 

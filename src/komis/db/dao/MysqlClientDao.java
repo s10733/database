@@ -1,19 +1,16 @@
 package komis.db.dao;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 
-
-
-
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import komis.Client;
 import komis.db.DaoBase;
@@ -41,7 +38,7 @@ public class MysqlClientDao extends DaoBase<Client> implements ClientDao {
 				
 				boolean exist = false;
 				
-				stmt =(Statement) connection.createStatement();
+				stmt = connection.createStatement();
 				
 				while (rs.next())
 				{
@@ -52,34 +49,36 @@ public class MysqlClientDao extends DaoBase<Client> implements ClientDao {
 				
 						}
 				}
+				
 				if(!exist)
 				{
-					stmt.executeUpdate("CREATE TABLE Client ("
+					
+				stmt.executeUpdate("CREATE TABLE Client ("
 					                 + "id int NOT NULL AUTO_INCREMENT,"
 					                 + "name VARCHAR(50),"
 					                 + "surname VARCHAR(50),"
 					                 + "pesel VARCHAR(11),"
                                      + "city VARCHAR(50),"
 					                 + "street VARCHAR(40),"
-                                     + "number integer"
+                                     + "number integer,"
                                      + "PRIMARY KEY (`id`),"
                                      + "UNIQUE KEY `id` (`id`)"
                                      + ")");
 							
 					
-				}
-						insert = connection.prepareStatement("insert into client (name,surname,pesel,city,street,number) values (?,?,?,?,?,?);");
+				};
+						insert = connection.prepareStatement("insert into client (name,surname,pesel,city,street,number) values (?,?,?,?,?,?)");
 						
 						update = connection.prepareStatement(""
-								+" update Client set"
+								+" update client set"
 								+"(name,surname,pesel,city,street,number)=(?,?,?,?,?,?)"
 								+ "where id =?");
 						
 						delete = connection.prepareStatement(""
-								+ "delete from Client where id =?");
-						selectId = connection.prepareStatement(" select * from Client where id= ?");
+								+ "delete from client where id =?");
+						selectId = connection.prepareStatement(" select * from client where id= ?");
 						
-						select = connection.prepareStatement("select * from Client");
+						select = connection.prepareStatement("select * from client");
 			}
 			
 			

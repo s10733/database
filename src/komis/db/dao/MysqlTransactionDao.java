@@ -1,6 +1,8 @@
 package komis.db.dao;
 
 
+import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,13 +11,10 @@ import java.util.List;
 
 import komis.Offer;
 import komis.Transaction;
-import komis.db.Dao;
 import komis.db.DaoBase;
 import komis.db.EntityBase;
 import komis.db.MysqlUnitOfWork;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 
 
 
