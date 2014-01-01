@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 
 public class MysqlUnitOfWork implements UnitOfWork {
 	
