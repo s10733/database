@@ -1,12 +1,12 @@
 package komis.db;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
 
-import java.sql.Connection;
 
 public class MysqlUnitOfWork implements UnitOfWork {
 	
@@ -29,7 +29,8 @@ public class MysqlUnitOfWork implements UnitOfWork {
 	public Connection getConnection(){
 	
 	try {
-		connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/java?user=root&password=");
+		if(connection==null || connection.isClosed())
+			connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/java?user=root&password=");
 	
 	connection.setAutoCommit(false);
 	

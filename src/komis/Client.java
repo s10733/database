@@ -10,7 +10,7 @@ public class Client extends EntityBase {
 	
 	private String name;
 	private String surname;
-	private String number;
+	private Integer number;
 	private String city;
 	private String street;
 	private String pesel;
@@ -40,10 +40,10 @@ public class Client extends EntityBase {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public String getNumber() {
+	public int getNumber() {
 		return number;
 	}
-	public void setNumber(String number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 	public String getCity() {
