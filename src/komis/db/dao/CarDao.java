@@ -5,5 +5,6 @@ import komis.db.Dao;
 
 public interface CarDao extends Dao<Car> {
 
-	public void setCar (Car ca);
+	public void setOffer (Car ca);
+	
 }

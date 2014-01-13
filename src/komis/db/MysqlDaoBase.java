@@ -143,7 +143,7 @@ public List<E> getAll() {
 }
 
 @Override
-public E get(int id) {
+public E get(int id ) {
 
 	try {
 		selectId.setInt(1, id);

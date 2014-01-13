@@ -1,5 +1,7 @@
 package komis;
 
+import java.util.List;
+
 import komis.db.EntityBase;
 
 public class Car extends EntityBase{
@@ -16,11 +18,13 @@ public class Car extends EntityBase{
 	private String car_number;
 	
 	//relacja Auto- Oferta;
-	public Offer getOffers() {
-		return offers;
+	private List<Car> Cars;
+	
+	public List<Car> getCars() {
+		return Cars;
 	}
-	public void setOffers(Offer offers) {
-		this.offers = offers;
+	public void setCars(List<Car> cars) {
+		this.Cars = cars;
 	}
 	public String getBrand() {
 		return brand;

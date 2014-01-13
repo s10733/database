@@ -11,16 +11,13 @@ import komis.db.MysqlUnitOfWork;
 
 public class MysqlOfferDao extends MysqlDaoBase<Offer> implements OfferDao {
 
-	protected MysqlOfferDao(MysqlUnitOfWork uow) {
-		super(uow);
+		TransactionDao transactionDao;
+	protected MysqlOfferDao(MysqlUnitOfWork ofe) {
+		super(ofe);
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public List<Car> getCarById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	protected void setUpdateQuery(Offer ent) throws SQLException {
@@ -51,7 +48,7 @@ public class MysqlOfferDao extends MysqlDaoBase<Offer> implements OfferDao {
 
 	@Override
 	protected String getCreateQuery() {
-		return "CREATE TABLE client("
+		return "CREATE TABLE offer("
 				+ "id integer PRIMARY KEY AUTO_INCREMENT NOT NULL,"
 				+ "price dobule NOT NULL ,)";
 	}
@@ -64,9 +61,24 @@ public class MysqlOfferDao extends MysqlDaoBase<Offer> implements OfferDao {
 
 	@Override
 	protected String getUpdateQuery() {
-		return "UPDATE client SET "
+		return "UPDATE offer SET "
 				+ "price = ?"
 				+ "where id =?";
+	}
+
+
+
+	@Override
+	public void setTransaction(Offer o) {
+		o.setTransactions(transactionDao.getTransactionByOffertId(o.getId()));
+	}
+
+
+
+	@Override
+	public List<Car> getTransactionByCarId(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

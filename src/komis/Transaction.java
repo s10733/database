@@ -33,15 +33,13 @@ public class Transaction extends EntityBase {
 	}
 	
 	// relacja Transakcja - oferta
+	private Offer offer;
 	
-	private List<Offer> Offers;
-	
-	
-	public List<Offer> getOffers() {
-		return Offers;
+	public Offer getOffer() {
+		return offer;
 	}
-	public void setOffers(List<Offer> offers) {
-		Offers = offers;
+	public void setOffer(Offer Offer) {
+		this.offer = offer;
 	}
 	public String getDate() {
 		return date;

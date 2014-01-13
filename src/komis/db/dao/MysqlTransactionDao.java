@@ -11,6 +11,7 @@ import java.util.List;
 
 import komis.Client;
 import komis.Offer;
+import komis.Seller;
 import komis.Transaction;
 import komis.db.DaoBase;
 import komis.db.EntityBase;
@@ -22,7 +23,7 @@ import komis.db.MysqlUnitOfWork;
 
 	public class MysqlTransactionDao extends MysqlDaoBase<Transaction> implements TransactionDao {
 		
-		 
+TransactionDao transactionDao;		 
 		
 		public MysqlTransactionDao(MysqlUnitOfWork tra){
 				
@@ -82,16 +83,22 @@ import komis.db.MysqlUnitOfWork;
 						+ "where id =?";
 	
 			}
+			@Override
+			public List<Transaction> getTransactionByClientId(int id) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			@Override
+			public List<Transaction> getTransactionBySellerId(int id) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			@Override
+			public List<Transaction> getTransactionByOffertId(int id) {
+				// TODO Auto-generated method stub
+				return null;
+			}
 				
 
-@Override
-public void setClient(Client c) {
-	// TODO Auto-generated method stub
-	
-}
-@Override
-public void setOffer(Offer o) {
-	// TODO Auto-generated method stub
-	
-}
+
 }

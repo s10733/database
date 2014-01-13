@@ -9,5 +9,6 @@ import komis.db.Dao;
 
 public interface OfferDao extends Dao<Offer>{
 
-	 public List<Car> getCarById(int id);
+	 public void setTransaction(Offer o);
+	 public List<Car> getTransactionByCarId(int id);
 }

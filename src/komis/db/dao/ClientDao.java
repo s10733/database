@@ -5,12 +5,15 @@ import java.util.List;
 
 import komis.db.Dao;
 import komis.Client;
+import komis.Offer;
+import komis.Seller;
 import komis.Transaction;
 
 
 
  public interface ClientDao extends Dao<Client> {
-	 public List<Transaction> getTransactionByClientId(int id);
+		public void setTransaction(Client c);
+		
 	
 	
 }

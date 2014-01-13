@@ -7,23 +7,26 @@ import komis.db.EntityBase;
 public class Offer extends EntityBase {
 
 
-        // relacja Oferta - Transakcja
-        private Transaction transactions;
         
         private double price;
+        private Offer offer;
         
-        //relacja Ofeta-Auta
-        private List<Car> cars;        
+        public Offer getOffer() {
+    		return offer;
+    	}
+    	public void setOffer(Offer offer) {
+    		this.offer = offer;
+    	} 
         
         
-        public Transaction getTransactions() {
-                return transactions;
-        }
-
-        public void setTransactions(Transaction transactions) {
-                this.transactions = transactions;
-        }
-
+    	private List<Transaction> transactions;
+    	
+    	public List<Transaction> getTransactions() {
+    		return transactions;
+    	}
+    	public void setTransactions(List<Transaction> transactions) {
+    		this.transactions = transactions;
+    	}
                 
 
         public double getPrice() {
@@ -34,13 +37,7 @@ public class Offer extends EntityBase {
                 this.price = price;
         }
 
-        public List<Car> getCars() {
-                return cars;
-        }
-
-        public void setCars(List<Car> cars) {
-                this.cars = cars;
-        }
+    	
 
                         
 }
