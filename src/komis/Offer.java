@@ -8,7 +8,7 @@ public class Offer extends EntityBase {
 
 
         
-        private double price;
+        private int price;
         private Offer offer;
         
         public Offer getOffer() {
@@ -29,11 +29,11 @@ public class Offer extends EntityBase {
     	}
                 
 
-        public double getPrice() {
+        public int getPrice() {
                 return price;
         }
 
-        public void setPrice(double price) {
+        public void setPrice(int price) {
                 this.price = price;
         }
 

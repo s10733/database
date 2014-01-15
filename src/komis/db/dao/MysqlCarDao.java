@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import komis.Car;
-
 import komis.db.MysqlDaoBase;
 import komis.db.MysqlUnitOfWork;
 
@@ -44,6 +43,7 @@ public class MysqlCarDao extends MysqlDaoBase<Car> implements CarDao {
 		car.setPower(rs.getString("power"));
 		car.setMileage(rs.getString("mileage"));
 		
+		
 		return car;
 	}
 
@@ -56,6 +56,7 @@ public class MysqlCarDao extends MysqlDaoBase<Car> implements CarDao {
 		insert.setString(5, ent.getEngine());
 		insert.setString(6, ent.getPower());
 		insert.setString(7, ent.getMileage());
+		System.out.println("DODANO SAMOCHÓD");
 		
 	}
 
@@ -66,6 +67,7 @@ public class MysqlCarDao extends MysqlDaoBase<Car> implements CarDao {
 
 	@Override
 	protected String getCreateQuery() {
+		System.out.println("STWORZONO TABELE CAR");
 		return "CREATE TABLE car("
 				+ "id integer PRIMARY KEY AUTO_INCREMENT NOT NULL,"
 				+ "brand VARCHAR(16) NOT NULL,"

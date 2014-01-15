@@ -12,7 +12,7 @@ import komis.db.MysqlUnitOfWork;
 public class MysqlOfferDao extends MysqlDaoBase<Offer> implements OfferDao {
 
 		TransactionDao transactionDao;
-	protected MysqlOfferDao(MysqlUnitOfWork ofe) {
+	public MysqlOfferDao(MysqlUnitOfWork ofe) {
 		super(ofe);
 		// TODO Auto-generated constructor stub
 	}
@@ -29,14 +29,14 @@ public class MysqlOfferDao extends MysqlDaoBase<Offer> implements OfferDao {
 	protected Offer build(ResultSet rs) throws SQLException {
 		Offer o = new Offer();
 		o.setId(rs.getInt("id"));
-		o.setPrice(rs.getDouble("price"));
+		o.setPrice(rs.getInt("price"));
 		return o;
 	}
 
 	@Override
 	protected void setInsertQuery(Offer ent) throws SQLException {
-		insert.setInt(1, ent.getId());
-		insert.setDouble(2, ent.getPrice());
+		insert.setInt(1, ent.getPrice());
+		System.out.println("DODANO OFERTE");
 		
 	}
 
@@ -48,9 +48,10 @@ public class MysqlOfferDao extends MysqlDaoBase<Offer> implements OfferDao {
 
 	@Override
 	protected String getCreateQuery() {
+		System.out.println("STWORZONO TABELE OFFER");
 		return "CREATE TABLE offer("
 				+ "id integer PRIMARY KEY AUTO_INCREMENT NOT NULL,"
-				+ "price dobule NOT NULL ,)";
+				+ "price integer NOT NULL)";
 	}
 
 	@Override

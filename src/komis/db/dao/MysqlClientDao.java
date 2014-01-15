@@ -16,6 +16,8 @@ import java.util.List;
 
 
 
+
+
 import komis.Client;
 import komis.Offer;
 import komis.Seller;
@@ -45,6 +47,7 @@ public  class MysqlClientDao extends MysqlDaoBase<Client> implements ClientDao {
 		update.setString(5, ent.getCity());
 		update.setString(6, ent.getStreet());
 		update.setInt(7, ent.getNumber());
+		
 	}
 
 	@Override
@@ -69,6 +72,7 @@ public  class MysqlClientDao extends MysqlDaoBase<Client> implements ClientDao {
 		insert.setString(4, ent.getCity());
 		insert.setString(5, ent.getStreet());
 		insert.setInt(6, ent.getNumber());
+		System.out.println("DODANO KLIENTA");
 	}
 
 	@Override
@@ -78,6 +82,7 @@ public  class MysqlClientDao extends MysqlDaoBase<Client> implements ClientDao {
 
 	@Override
 	protected String getCreateQuery() {
+		System.out.println("STWORZONO TABELE CLIENT");
 		return "CREATE TABLE client("
 				+ "id integer PRIMARY KEY AUTO_INCREMENT NOT NULL,"
 				+ "name VARCHAR(16) NOT NULL,"
@@ -97,9 +102,11 @@ public  class MysqlClientDao extends MysqlDaoBase<Client> implements ClientDao {
 
 	@Override
 	protected String getUpdateQuery() {
+		
 		return "UPDATE client SET "
 				+ "name = ? ,surname = ?,pesel = ?,city = ?,street = ?,number = ?"
 				+ "where id =?";
+		
 	}
 
 

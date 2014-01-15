@@ -14,8 +14,8 @@ public class MysqlSellerDao extends MysqlDaoBase<Seller> implements SellerDao {
 
 	TransactionDao transactionDao;
 	
-	protected MysqlSellerDao(MysqlUnitOfWork uow) {
-		super(uow);
+	public MysqlSellerDao(MysqlUnitOfWork sel) {
+		super(sel);
 	}
 
 
@@ -28,7 +28,7 @@ public class MysqlSellerDao extends MysqlDaoBase<Seller> implements SellerDao {
 		update.setString(4, ent.getPesel());
 		update.setString(5, ent.getCity());
 		update.setString(6, ent.getStreet());
-		update.setString(7, ent.getNumber());
+		update.setInt(7, ent.getNumber());
 		
 	}
 
@@ -41,7 +41,7 @@ public class MysqlSellerDao extends MysqlDaoBase<Seller> implements SellerDao {
 		s.setPesel(rs.getString("pesel"));
 		s.setCity(rs.getString("city"));
 		s.setStreet(rs.getString("street"));
-		s.setNumber(rs.getString("number"));
+		s.setNumber(rs.getInt("number"));
 		
 		return s;		
 	}
@@ -53,7 +53,8 @@ public class MysqlSellerDao extends MysqlDaoBase<Seller> implements SellerDao {
 		insert.setString(3, ent.getPesel());
 		insert.setString(4, ent.getCity());
 		insert.setString(5, ent.getStreet());
-		insert.setString(6, ent.getNumber());
+		insert.setInt(6, ent.getNumber());
+		System.out.println("DODANO SPRZEDAWCÊ");
 		
 	}
 
@@ -64,6 +65,7 @@ public class MysqlSellerDao extends MysqlDaoBase<Seller> implements SellerDao {
 
 	@Override
 	protected String getCreateQuery() {
+		System.out.println("STWORZONO TABELE SELLER");
 		return "CREATE TABLE seller("
 				+ "id integer PRIMARY KEY AUTO_INCREMENT NOT NULL,"
 				+ "name VARCHAR(16) NOT NULL,"
@@ -71,7 +73,7 @@ public class MysqlSellerDao extends MysqlDaoBase<Seller> implements SellerDao {
 				+ "pesel VARCHAR(11) NOT NULL,"
 				+ "city VARCHAR(40) NOT NULL,"
 				+ "street VARCHAR(40) ,"
-				+ "number integer,)";
+				+ "number integer)";
 	}
 
 	@Override

@@ -52,6 +52,7 @@ TransactionDao transactionDao;
 			protected void setInsertQuery(Transaction ent) throws SQLException {
 				insert.setString(1, ent.getDate());
 				insert.setDouble(2, ent.getPrice());
+				System.out.println("DODANO TRANSAKCJÊ");
 				
 			}
 
@@ -62,10 +63,11 @@ TransactionDao transactionDao;
 
 			@Override
 			protected String getCreateQuery() {
+				System.out.println("STWORZONO TABELE TRANSACTION");
 				return "CREATE TABLE transaction("
 						+ "id integer PRIMARY KEY AUTO_INCREMENT NOT NULL,"
 						+ "date date NOT NULL,"
-						+ "pirce double NOT NULL,)";
+						+ "price double NOT NULL)";
 			}
 
 			@Override
