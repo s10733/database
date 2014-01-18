@@ -57,9 +57,14 @@ public class Main {
 		t.setDate("2013-11-30");
 		t.setPrice(1900);
 		
+
+		
+				
+		
 		tdao.save(t);
 		tra.commit();
 		tra.close();
+		
 		
 		MysqlUnitOfWork ca = new MysqlUnitOfWork();
 		CarDao carDao = new MysqlCarDao(ca);
@@ -75,6 +80,7 @@ public class Main {
 		carDao.save(car);
 		ca.commit();
 		ca.close();
+		
 		
 		
 		MysqlUnitOfWork ofe = new MysqlUnitOfWork();
